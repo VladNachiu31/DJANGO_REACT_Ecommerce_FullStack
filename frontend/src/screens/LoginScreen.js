@@ -10,7 +10,7 @@ import { login } from '../actions/userActions'
 function LoginScreen() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const navigate = useNavigate();
+    const navigate = useNavigate()
     const location = useLocation()
 
     const dispatch = useDispatch()
@@ -22,14 +22,13 @@ function LoginScreen() {
 
     useEffect(() => {
       if (userInfo) {
-        navigate.pushState(redirect)
+        navigate(redirect)
       }
     }, [navigate, userInfo, redirect])
 
     const submitHandler = (e) => {
       e.preventDefault()
       dispatch(login(email, password))
-      
     }
 
   return (
